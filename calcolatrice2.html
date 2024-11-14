@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+</head>
+<body>
+    <h2><b>CALCOLATRICE</b></h2>
+
+    <script>
+        function calcola() {
+            let a = parseFloat(document.getElementById("op1").value);
+            let b = parseFloat(document.getElementById("op2").value);
+            let risultato;
+            let op;
+
+            var sm = document.getElementById("somma");
+            var st = document.getElementById("sottrazione");
+            var mt = document.getElementById("moltiplicazione");
+            var dv = document.getElementById("divisione");
+
+            if (sm.checked) {
+                op = "somma";
+                risultato = a + b;
+            } else if (st.checked) {
+                op = "sottrazione";
+                risultato = a - b;
+            } else if (mt.checked) {
+                op = "moltiplicazione";
+                risultato = a * b;
+            } else if (dv.checked) {
+                if (b !== 0) {
+                    op = "divisione";
+                    risultato = a / b;
+                } else {
+                    risultato = "IMPOSSIBILE!";
+                }
+            } else {
+                risultato = "Seleziona un'operazione!";
+            }
+
+            document.getElementById("ris").innerHTML = risultato;
+        }
+    </script>
+
+    <table>
+        <tr>
+            <td>Operando 1:</td>
+            <td><input type="text" id="op1" size="10"></td>
+        </tr>
+        <tr>
+            <td>Operando 2:</td>
+            <td><input type="text" id="op2" size="10"></td>
+        </tr>
+        <tr>
+            <td>Risultato:</td>
+            <td id="ris"></td>
+        </tr>
+    </table>
+
+    <div>
+        <p>    <input type="radio" id="somma" name="a">SOMMA <p>
+            <p>    <input type="radio" id="sottrazione" name="a">SOTTRAZIONE <p>
+            <p>    <input type="radio" id="moltiplicazione" name="a">MOLTIPLICAZIONE <p>
+            <p>    <input type="radio" id="divisione" name="a">DIVISIONE <p>
+    </div>
+
+    <input type="button" value="CALCOLA" onClick="calcola();">
+</body>
+</html>
