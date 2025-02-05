@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carica CSV e Mostra Tabella</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Carica un file CSV</h2>
+
+<input type="file" id="csvFile" accept=".csv">
+<br><br>
+<table id="csvTable"></table>
+
+<script>
+    document.getElementById('csvFile').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file && file.name.endsWith('.csv')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const text = e.target.result;
+                const rows = text.split('\n');
+                const table = document.getElementById('csvTable');
+                table.innerHTML = ""; // Clear any existing content
+                
+                rows.forEach((row, index) => {
+                    const cells = row.split(',');
+                    const tr = document.createElement('tr');
+                    
+                    cells.forEach(cell => {
+                        const td = document.createElement(index === 0 ? 'th' : 'td');
+                        td.textContent = cell.trim();
+                        tr.appendChild(td);
+                    });
+
+                    table.appendChild(tr);
+                });
+            };
+            reader.readAsText(file);
+        } else {
+            alert("Per favore carica un file CSV.");
+        }
+    });
+</script>
+
+</body>
+</html>
