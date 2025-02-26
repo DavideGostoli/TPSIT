@@ -5,14 +5,14 @@ th, td {
     width: 125px;
     color: #565656;
 }
-th,td , #tabella{
+th,td , #demo{
     border: 1px solid;
     border-radius: 10px;
 }
 body{
     background-color: #eeeff3 ;
 }
-#tabella{
+#demo{
     float: center;
     background-color: #eeeff3 ;
     margin: 1% 32%;

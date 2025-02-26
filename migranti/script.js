@@ -23,7 +23,7 @@ function creaTab(tab){
     }
     for (let i = 0; i < colonne1.length; i++) {
 	if (i%2==0){
-            document.getElementById("tabella").innerHTML += "<tr><td>" + colonne1[i] + "</td><td>" + colonne1[i+1] + "</td></tr>";
+            document.getElementById("demo").innerHTML += "<tr><td>" + colonne1[i] + "</td><td>" + colonne1[i+1] + "</td></tr>";
 	}
     }
 }
