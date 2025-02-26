@@ -1,16 +1,38 @@
-th, td {
-    border: 0,5px solid;
-    background:white;
+div{
+    float: left;
 }
-th, td, #tabella{
+th, td {
+    width: 125px;
+    color: #565656;
+}
+th,td , #tabella{
     border: 1px solid;
     border-radius: 10px;
 }
-#tabella{
-    float: center ;
-    border: 0,5px solid;
-    background:black;
+body{
+    background-color: #eeeff3 ;
 }
-div{
-    float: border;
+#tabella{
+    float: center;
+    background-color: #eeeff3 ;
+    margin: 1% 32%;
+    width: 500px;
+}
+button{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #c3d8e2 ;
+}
+input{ 
+    border-radius: 10px;
+    border-color: #565656 ;
+    background-color: #eeeff3 ;
+    margin: 15px;
+    width: 500px;
+    height: 40px;
+}
+::placeholder{
+    text-align: center;
+    color: #565656;
 }
