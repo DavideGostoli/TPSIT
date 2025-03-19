@@ -71,7 +71,7 @@
         ctx.fillStyle = "blue";
         ctx.fillText('0', 5, 495);
 
-        let massimo = massi(numeri);// trovo il maggiore
+        let massimo = maggiore(numeri);// trovo il S
         let max = Math.round(massimo / 10000) * 10000;//approssimo il maggiore
         Ux = lung / (anni.length + 1)//unità di misura per disegnare le stanghette sull asse dele x
         Uy = 445 / max//unità di misura per disegnare le stanghette sull asse dele y
@@ -106,7 +106,7 @@
         }
         ctx.stroke();
     }
-    function massi(num) {//metodo per trovare il maggiore nell'array dei numeri di oersone sbarcate 
+    function maggiore(num) {//metodo per trovare il maggiore nell'array dei numeri di oersone sbarcate 
         let max = num[0]
         for (let i = 1; i < num.length; i++)
             max = Math.max(num[i], max);
