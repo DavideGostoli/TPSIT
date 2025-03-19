@@ -24,6 +24,7 @@
             creaTab(contenuto);
         }
     }
+
     function creaTab(tab) {
         table = document.getElementById("tabella");
         table.style.borderColor = "black";
@@ -45,7 +46,7 @@
         }
         creaGrafico(colonne1);
     }
-    
+
     function creaGrafico(grafico) {
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
@@ -107,6 +108,7 @@
         }
         ctx.stroke();
     }
+    
     function maggiore(num) {//metodo per trovare il maggiore nell'array dei numeri di oersone sbarcate 
         let max = num[0]
         for (let i = 1; i < num.length; i++)
